@@ -257,7 +257,7 @@ public class Memo implements ByteSerializable, JsonSerializable {
                     senderPublicKey.toBytes(),
                     recipientPublicKey.toBytes(),
                     nonceBytes,
-                    new byte[]{(byte) this.message.length},
+                    Util.serializeLongToBytes(message.length),
                     this.message);
         }
     }
